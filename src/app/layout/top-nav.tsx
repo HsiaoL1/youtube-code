@@ -19,7 +19,7 @@ export function TopNav() {
     <header className="sticky top-0 z-30 bg-background">
       <div className="flex h-14 items-center gap-2 px-4">
         {/* Left: hamburger + logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex flex-1 items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
@@ -46,7 +46,7 @@ export function TopNav() {
 
         {/* Center: search bar */}
         <form
-          className="mx-auto hidden w-full max-w-xl items-center md:flex"
+          className="hidden w-full max-w-xl items-center md:flex"
           onSubmit={(e) => {
             e.preventDefault();
             const q = new FormData(e.currentTarget).get('q')?.toString().trim();
@@ -72,7 +72,7 @@ export function TopNav() {
         </form>
 
         {/* Right: actions */}
-        <div className="ml-auto flex items-center gap-1">
+        <div className="flex flex-1 items-center justify-end gap-1">
           {user && (
             <Button variant="ghost" size="icon" className="rounded-full" onClick={() => navigate('/studio/upload')}>
               <Video className="h-5 w-5" />
